@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('question')->unique();
             $table->text('answer');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     'paginate' => 10,
@@ -10,13 +10,14 @@ return [
         'posts' => 'posts',
         'comments' => 'comments',
         'product_categories' => 'product_categories',
-        'products' => 'products'
+        'products' => 'products',
+        'faqs' => 'faqs',
     ],
     'path' => [
         'storage' => 'storage',
         'storage_app' => 'app',
         'storage_public' => 'public',
-        'storage_app_public' => 'app/public', 
+        'storage_app_public' => 'app/public',
         'posts' => [
             'normals' => 'files/posts/normals',
             'thumbnails' => 'files/posts/thumbnails'

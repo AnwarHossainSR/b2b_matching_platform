@@ -43,8 +43,9 @@ class FaqService
      */
     public function store($request)
     {
-        $slug = Str::slug($request->title);
+        $slug = Str::slug($request->question, '-');
         $request->merge(['slug' => $slug]);
+        //return $request;
         $result = $this->faqRepository->store($request);
         if (!$result) {
             return $this->failure(__('messages.crud.storeFailed'));
