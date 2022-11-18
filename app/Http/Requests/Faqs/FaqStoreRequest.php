@@ -14,8 +14,8 @@ class FaqStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
-        //return Gate::allows('faq-create');
+        //return true;
+        return Gate::allows('faq-create');
     }
 
     /**
