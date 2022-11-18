@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
+            $table->string('question')->unique();
+            $table->text('answer');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
