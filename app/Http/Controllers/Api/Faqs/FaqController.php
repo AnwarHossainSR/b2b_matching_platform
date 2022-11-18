@@ -80,3 +80,30 @@ class FaqController extends Controller
         return $this->faqService->destroy($faq);
     }
 }
+
+// FN : getAll
+    /**
+     * @OA\Get(
+     *      path="/faqs",
+     *      operationId="getFaqListAll",
+     *      tags={"Faqs"},
+     *      summary="Get list of Faqs All",
+     *      description="Returns list of Faq All",
+
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="success", type="string", example=false),
+     *              @OA\Property(property="message", type="string", example="This action is unauthorized."),
+     *          )
+     *      ),
+     * )
+     */
