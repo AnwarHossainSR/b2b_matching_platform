@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Faqs;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class FaqStoreRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class FaqStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Gate::allows('faq-create');
     }
 
     /**
@@ -24,7 +25,15 @@ class FaqStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'question' => [
+                'required',
+                'string',
+                'unique:' . config('constants.table.faqs') . ',question',
+            ],
+            'answer' => [
+                'required',
+                'string',
+            ]
         ];
     }
 }
