@@ -3,19 +3,33 @@
 namespace App\Http\Controllers\Api\Faqs;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Faqs\FaqStoreRequest;
 use App\Models\Faqs\Faq;
+use App\Services\Faqs\FaqService;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+
+    /**
+     * @var $faqService
+     */
+    protected $faqService;
+
+    public function __construct(FaqService $faqService)
+    {
+        $this->faqService = $faqService;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return $this->faqService->getAll($request);
     }
 
     /**
@@ -24,9 +38,9 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FaqStoreRequest $request)
     {
-        //
+        return $this->faqService->store($request);
     }
 
     /**
