@@ -82,28 +82,127 @@ class FaqController extends Controller
 }
 
 // FN : getAll
-    /**
-     * @OA\Get(
-     *      path="/faqs",
-     *      operationId="getFaqListAll",
-     *      tags={"Faqs"},
-     *      summary="Get list of Faqs All",
-     *      description="Returns list of Faq All",
+/**
+ * @OA\Get(
+ *      path="/faqs",
+ *      operationId="getFaqListAll",
+ *      tags={"Faqs"},
+ *      summary="Get list of Faqs All",
+ *      description="Returns list of Faq All",
 
-     *      @OA\Response(
-     *          response=200,
-     *          description="Successful operation",
-     *          @OA\MediaType(
-     *              mediaType="application/json",
-     *          )
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden",
-     *          @OA\JsonContent(
-     *              @OA\Property(property="success", type="string", example=false),
-     *              @OA\Property(property="message", type="string", example="This action is unauthorized."),
-     *          )
-     *      ),
-     * )
-     */
+ *      @OA\Response(
+ *          response=200,
+ *          description="Successful operation",
+ *          @OA\MediaType(
+ *              mediaType="application/json",
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=403,
+ *          description="Forbidden",
+ *          @OA\JsonContent(
+ *              @OA\Property(property="success", type="string", example=false),
+ *              @OA\Property(property="message", type="string", example="This action is unauthorized."),
+ *          )
+ *      ),
+ * )
+ */
+
+// FN: store
+/**
+ * @OA\Post(
+ *      path="/faqs",
+ *      operationId="storeFaq",
+ *      tags={"Faqs"},
+ *      summary="Store New Faq",
+ *      security={{"bearerAuth": {}}},
+ *
+ *      @OA\RequestBody(
+ *          required=true,
+ *          @OA\MediaType(
+ *              mediaType="multipart/form-data",
+ *              @OA\Schema(
+ *                  required={"question","answer"},
+ *                  @OA\Property(
+ *                      property="question",
+ *                      description="Question",
+ *                      example="This is test question",
+ *                      type="string"
+ *                  ),
+ *                  @OA\Property(
+ *                      property="answer",
+ *                      description="Answer",
+ *                      example="This is the test answer",
+ *                      type="string"
+ *                  ),
+ *              )
+ *          )
+ *      ),
+ *
+ *      @OA\Response(
+ *          response=201,
+ *          description="Success",
+ *          @OA\MediaType(
+ *              mediaType="application/json",
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=400,
+ *          description="Bad Request"
+ *      ),
+ *      @OA\Response(
+ *          response=401,
+ *          description="Unauthenticated",
+ *          @OA\JsonContent(
+ *              @OA\Property(property="success", type="string", example=false),
+ *              @OA\Property(property="message", type="string", example="Unauthenticated."),
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=403,
+ *          description="Forbidden",
+ *          @OA\JsonContent(
+ *              @OA\Property(property="success", type="string", example=false),
+ *              @OA\Property(property="message", type="string", example="This action is unauthorized."),
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=404,
+ *          description="Not Found",
+ *          @OA\JsonContent(
+ *              @OA\Property(property="success", type="string", example=false),
+ *              @OA\Property(property="message", type="string", example="ID is not found."),
+ *          )
+ *      ),
+ *      @OA\Response(
+ *          response=422,
+ *          description="Unprocessable Entity(Validation errors)",
+ *          @OA\JsonContent(
+ *              @OA\Property(property="success", type="string", example=false),
+ *              @OA\Property(property="message", type="string", example="The given data was invalid."),
+ *              @OA\Property(
+ *                  property="errors",
+ *                  type="object",
+ *                  @OA\Property(
+ *                      property="question",
+ *                      type="array",
+ *                      collectionFormat="multi",
+ *                      @OA\Items(
+ *                          type="string",
+ *                          example="The question field is required.",
+ *                      )
+ *                  ),
+ *                  @OA\Property(
+ *                      property="answer",
+ *                      type="array",
+ *                      collectionFormat="multi",
+ *                      @OA\Items(
+ *                          type="string",
+ *                          example="The answer field is required.",
+ *                      )
+ *                  ),
+ *              )
+ *          )
+ *      ),
+ * )
+ */
