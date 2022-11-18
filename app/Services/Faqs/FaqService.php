@@ -73,7 +73,7 @@ class FaqService
      */
     public function update($request, $faq)
     {
-        $slug = Str::slug($request->question, '-');
+        $slug = str()->slug($request->question);
         $request->merge(['slug' => $slug]);
         $result = $this->faqRepository->update($request, $faq);
         if ($result) {
