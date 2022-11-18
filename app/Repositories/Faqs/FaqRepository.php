@@ -17,8 +17,6 @@ class FaqRepository
         $this->faq = $faq;
     }
 
-    // Your methods for repository
-
     public function getAll($request)
     {
         return $this->faq->all();
@@ -29,9 +27,19 @@ class FaqRepository
         return $this->faq->create($request->all());
     }
 
-    // public function store($request)
-    // {
-    //     $post = $this->post->create($request->all());
-    //     return $post->fresh();
-    // }
+    public function get($faq)
+    {
+        return $faq;
+    }
+
+    public function update($request, $faq)
+    {
+        $faq->update($request->all());
+        return $faq->fresh();
+    }
+
+    public function destroy($faq)
+    {
+        return $faq->delete();
+    }
 }

@@ -52,4 +52,49 @@ class FaqService
         }
         return $this->success(__('messages.crud.stored'), new FaqResource($result), Response::HTTP_CREATED);
     }
+
+    /**
+     * Get post by id.
+     *
+     * @param $id
+     * @return String
+     */
+    public function get($faq)
+    {
+        return $this->success('', new FaqResource($faq));
+    }
+
+    /**
+     * Update post data
+     * Store to DB if there are no errors.
+     *
+     * @param array $data
+     * @return String
+     */
+    public function update($request, $faq)
+    {
+        $slug = Str::slug($request->question, '-');
+        $request->merge(['slug' => $slug]);
+        $result = $this->faqRepository->update($request, $faq);
+        if ($result) {
+            return $this->success(__('messages.crud.updated'), new FaqResource($result));
+        }
+        return $this->failure(__('messages.crud.updateFailed'));
+    }
+
+    /**
+     * Delete post by id.
+     *
+     * @param $id
+     * @return String
+     */
+    public function destroy($faq)
+    {
+        $result = $this->faqRepository->destroy($faq);
+        if ($result) {
+            return $this->success(__('messages.crud.deleted'));
+            //return $this->success(__('messages.crud.deleted'), [], Response::HTTP_NO_CONTENT);
+        }
+        return $this->failure(__('messages.crud.deleteFailed'));
+    }
 }

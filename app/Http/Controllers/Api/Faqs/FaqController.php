@@ -51,7 +51,8 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
-        //
+        $this->authorize('faq-view');
+        return $this->faqService->get($faq);
     }
 
     /**
@@ -63,7 +64,8 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $this->authorize('faq-edit');
+        return $this->faqService->update($request, $faq);
     }
 
     /**
@@ -74,6 +76,7 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
+        $this->authorize('faq-delete');
+        return $this->faqService->destroy($faq);
     }
 }

@@ -33,6 +33,5 @@ class UserSeeder extends Seeder
             $user = User::create($userRow);
             $user->roles()->attach([$userKey + 1]);
         }
-
     }
 }

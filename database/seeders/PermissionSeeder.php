@@ -59,6 +59,9 @@ class PermissionSeeder extends Seeder
             ['title' => 'product-delete', 'display_title' => 'Product Delete'],
             ['title' => 'product-publish', 'display_title' => 'Product Publish'],
             ['title' => 'faq-create', 'display_title' => 'Faq Create'],
+            ['title' => 'faq-view', 'display_title' => 'Faq View'],
+            ['title' => 'faq-edit', 'display_title' => 'Faq Edit'],
+            ['title' => 'faq-delete', 'display_title' => 'Faq Delete'],
         ];
 
         Permission::insert($permissions);

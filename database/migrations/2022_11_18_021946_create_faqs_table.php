@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('answer');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('delete_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
