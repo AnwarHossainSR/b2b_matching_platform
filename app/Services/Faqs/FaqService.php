@@ -31,7 +31,7 @@ class FaqService
 
     public function getAll($request)
     {
-        return $this->success('',  new FaqCollection($this->faqRepository->getAll($request)));
+        return $this->success('', new FaqCollection($this->faqRepository->getAll($request)));
     }
 
     /**
