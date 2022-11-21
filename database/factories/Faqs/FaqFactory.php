@@ -19,7 +19,6 @@ class FaqFactory extends Factory
         return [
             'question' => fake()->sentence(),
             'answer' => fake()->paragraph(),
-            'slug' => fake()->slug(),
         ];
     }
 }
