@@ -14,14 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faqs', function (Blueprint $table) {
-            $table->id();
-            $table->string('slug')->unique();
+            $table->uuid('id')->primary();
             $table->string('question')->unique();
             $table->text('answer');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('delete_by')->nullable();
+            $table->string('user_id')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('delete_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

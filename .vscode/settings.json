@@ -1,0 +1,12 @@
+{
+  "[php]": {
+    //"editor.defaultFormatter": "newburg.vscode-intelephense-client",
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  }
+}

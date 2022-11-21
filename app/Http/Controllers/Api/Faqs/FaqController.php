@@ -293,7 +293,6 @@ class FaqController extends Controller
  *              title="Update faq request",
  *              description="Faq request body",
  *              type="object",
- *              required={"question","answer"},
  *              @OA\Property(
  *                  property="question",
  *                  description="Question",

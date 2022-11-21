@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Faqs\Faq;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,5 +20,6 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class
         ]);
+        Faq::factory(10)->create();
     }
 }

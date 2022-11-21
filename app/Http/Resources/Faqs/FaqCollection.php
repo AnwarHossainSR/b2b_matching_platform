@@ -14,7 +14,6 @@ class FaqCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
         return [
             'data' => FaqResource::collection($this->collection),
         ];
