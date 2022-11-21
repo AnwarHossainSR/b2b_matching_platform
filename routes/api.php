@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 use App\Http\Controllers\Api\Auth\LoginController;
+use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Auth\ResetPasswordController;
 use App\Http\Controllers\Api\Blogs\CategoryController;
 use App\Http\Controllers\Api\Blogs\CommentController;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('v1')->group(function () {
-    Route::post('register', [Regis::class, 'register']);
+    Route::post('register', [RegisterController::class, 'register']);
     Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPassword'])->name('password.forgot');
     Route::post('reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.reset');
     Route::post('login', [LoginController::class, 'login']);
