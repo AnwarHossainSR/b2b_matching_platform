@@ -2142,10 +2142,6 @@
                             "schema": {
                                 "title": "Update faq request",
                                 "description": "Faq request body",
-                                "required": [
-                                    "question",
-                                    "answer"
-                                ],
                                 "properties": {
                                     "question": {
                                         "description": "Question",

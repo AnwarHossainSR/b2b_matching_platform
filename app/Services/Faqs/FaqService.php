@@ -73,8 +73,12 @@ class FaqService
      */
     public function update($request, $faq)
     {
-        $slug = str()->slug($request->question);
-        $request->merge(['slug' => $slug]);
+        if (count($request->all()) === 0) {
+            return $this->failure(__('messages.crud.updateFailed'));
+        }
+        if ($request->question && $request->question != $faq->question) {
+            $request->merge(['slug' => str()->slug($request->question)]);
+        }
         $result = $this->faqRepository->update($request, $faq);
         if ($result) {
             return $this->success(__('messages.crud.updated'), new FaqResource($result));
@@ -93,7 +97,6 @@ class FaqService
         $result = $this->faqRepository->destroy($faq);
         if ($result) {
             return $this->success(__('messages.crud.deleted'));
-            //return $this->success(__('messages.crud.deleted'), [], Response::HTTP_NO_CONTENT);
         }
         return $this->failure(__('messages.crud.deleteFailed'));
     }
