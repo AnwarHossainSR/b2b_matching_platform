@@ -12,7 +12,8 @@ use Ramsey\Uuid\Uuid;
 
 class Faq extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['question', 'answer'];
 
