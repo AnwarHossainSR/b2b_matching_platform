@@ -12,7 +12,7 @@ use App\Traits\Common\RespondsWithHttpStatus;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-class LoginService 
+class LoginService
 {
     use RespondsWithHttpStatus;
     /**
@@ -21,8 +21,8 @@ class LoginService
     protected $loginRepository;
 
     /**
-     * LoginService constructor. 
-     * 
+     * LoginService constructor.
+     *
      * @param LoginRepository $loginRepository
      */
 
@@ -43,7 +43,7 @@ class LoginService
             ];
             return $this->success(__('messages.loggedIn'), new LoginResource($result));
         }
-        return $this->failure(__('messages.loginFailed'), Response::HTTP_UNAUTHORIZED);
+        return $this->failure(__('auth.failed'), Response::HTTP_UNAUTHORIZED);
     }
 
     public function logout($request)
@@ -52,5 +52,5 @@ class LoginService
         //auth()->logout();
         return $this->success(__('messages.loggedOut'));
     }
-    
+
 }

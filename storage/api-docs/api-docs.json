@@ -21,7 +21,9 @@
     "paths": {
         "/forgot-password": {
             "post": {
-                "tags": ["Auth"],
+                "tags": [
+                    "Auth"
+                ],
                 "summary": "Forgot Password",
                 "operationId": "forgotPassword",
                 "parameters": [
@@ -69,7 +71,9 @@
         },
         "/login": {
             "post": {
-                "tags": ["Auth"],
+                "tags": [
+                    "Auth"
+                ],
                 "summary": "Log In",
                 "description": "Login by email, password",
                 "operationId": "authLogin",
@@ -79,7 +83,10 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "required": ["email", "password"],
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
                                 "properties": {
                                     "email": {
                                         "type": "string",
@@ -171,7 +178,9 @@
         },
         "/logout": {
             "post": {
-                "tags": ["Auth"],
+                "tags": [
+                    "Auth"
+                ],
                 "summary": "Logout",
                 "operationId": "logout",
                 "responses": {
@@ -214,7 +223,9 @@
         },
         "/register": {
             "post": {
-                "tags": ["Auth"],
+                "tags": [
+                    "Auth"
+                ],
                 "summary": "Register",
                 "operationId": "register",
                 "requestBody": {
@@ -283,7 +294,9 @@
         },
         "/reset-password": {
             "post": {
-                "tags": ["Auth"],
+                "tags": [
+                    "Auth"
+                ],
                 "summary": "Reset Password",
                 "operationId": "resetPassword",
                 "requestBody": {
@@ -366,7 +379,9 @@
         },
         "/categories": {
             "get": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Get list of Category All",
                 "description": "Returns list of Category All",
                 "operationId": "getCategoryListAll",
@@ -436,7 +451,9 @@
                 ]
             },
             "post": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Store New Category",
                 "operationId": "storeCategory",
                 "requestBody": {
@@ -447,7 +464,9 @@
                             "schema": {
                                 "title": "Store new Category request",
                                 "description": "Category request body",
-                                "required": ["title"],
+                                "required": [
+                                    "title"
+                                ],
                                 "properties": {
                                     "title": {
                                         "description": "Title",
@@ -573,7 +592,9 @@
         },
         "/categories/{slug}": {
             "get": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Return specific Category",
                 "operationId": "getCategoryById",
                 "parameters": [
@@ -667,7 +688,9 @@
         },
         "/categories/{id}": {
             "put": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Update existing Category",
                 "operationId": "updateCategory",
                 "parameters": [
@@ -690,7 +713,9 @@
                             "schema": {
                                 "title": "Store new Category request",
                                 "description": "Category request body",
-                                "required": ["name"],
+                                "required": [
+                                    "name"
+                                ],
                                 "properties": {
                                     "title": {
                                         "description": "Title",
@@ -814,7 +839,9 @@
                 ]
             },
             "delete": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Delete existing Category",
                 "description": "Deletes a record and returns content",
                 "operationId": "deleteCategory",
@@ -910,7 +937,9 @@
         },
         "/posts/{slug}/comments": {
             "post": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Store Comment",
                 "operationId": "storeComment",
                 "parameters": [
@@ -932,7 +961,9 @@
                             "schema": {
                                 "title": "Store new Comment request",
                                 "description": "Comment request body",
-                                "required": ["comment"],
+                                "required": [
+                                    "comment"
+                                ],
                                 "properties": {
                                     "comment": {
                                         "description": "Comment",
@@ -1058,7 +1089,9 @@
         },
         "/posts/{slug}/comments/reply": {
             "post": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Store Comment Reply",
                 "operationId": "storeCommentReply",
                 "parameters": [
@@ -1080,7 +1113,10 @@
                             "schema": {
                                 "title": "Store Comment Reply request",
                                 "description": "Comment Reply request body",
-                                "required": ["parent_id", "comment"],
+                                "required": [
+                                    "parent_id",
+                                    "comment"
+                                ],
                                 "properties": {
                                     "parent_id": {
                                         "description": "Comment Parent Id",
@@ -1211,7 +1247,9 @@
         },
         "/posts": {
             "get": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Get list of Post All",
                 "description": "Returns list of Post All",
                 "operationId": "getPostListAll",
@@ -1281,7 +1319,9 @@
                 ]
             },
             "post": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Store New Post",
                 "operationId": "storePost",
                 "requestBody": {
@@ -1289,7 +1329,10 @@
                     "content": {
                         "multipart/form-data": {
                             "schema": {
-                                "required": ["category_id", "title"],
+                                "required": [
+                                    "category_id",
+                                    "title"
+                                ],
                                 "properties": {
                                     "image": {
                                         "description": "Uplaod a image",
@@ -1429,7 +1472,9 @@
         },
         "/posts/{slug}": {
             "get": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Return specific Post",
                 "operationId": "getPostById",
                 "parameters": [
@@ -1523,7 +1568,9 @@
         },
         "/posts/{id}": {
             "post": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Update Post",
                 "operationId": "updatePost",
                 "parameters": [
@@ -1543,7 +1590,9 @@
                     "content": {
                         "multipart/form-data": {
                             "schema": {
-                                "required": ["_method"],
+                                "required": [
+                                    "_method"
+                                ],
                                 "properties": {
                                     "_method": {
                                         "description": "Method will always PUT",
@@ -1686,7 +1735,9 @@
                 ]
             },
             "delete": {
-                "tags": ["Blogs"],
+                "tags": [
+                    "Blogs"
+                ],
                 "summary": "Delete existing Post",
                 "description": "Deletes a record and returns content",
                 "operationId": "deletePost",
@@ -1782,7 +1833,9 @@
         },
         "/faqs": {
             "get": {
-                "tags": ["Faqs"],
+                "tags": [
+                    "Faqs"
+                ],
                 "summary": "Get list of Faqs All",
                 "description": "Returns list of Faq All",
                 "operationId": "getFaqListAll",
@@ -1816,7 +1869,9 @@
                 }
             },
             "post": {
-                "tags": ["Faqs"],
+                "tags": [
+                    "Faqs"
+                ],
                 "summary": "Store New Faq",
                 "operationId": "storeFaq",
                 "requestBody": {
@@ -1824,7 +1879,10 @@
                     "content": {
                         "multipart/form-data": {
                             "schema": {
-                                "required": ["question", "answer"],
+                                "required": [
+                                    "question",
+                                    "answer"
+                                ],
                                 "properties": {
                                     "question": {
                                         "description": "Question",
@@ -1963,7 +2021,9 @@
         },
         "/faqs/{slug}": {
             "get": {
-                "tags": ["Faqs"],
+                "tags": [
+                    "Faqs"
+                ],
                 "summary": "Return specific Faq",
                 "operationId": "getFaqById",
                 "parameters": [
@@ -2057,7 +2117,9 @@
         },
         "/faqs/{id}": {
             "put": {
-                "tags": ["Faqs"],
+                "tags": [
+                    "Faqs"
+                ],
                 "summary": "Update existing Faq",
                 "operationId": "updateFaq",
                 "parameters": [
@@ -2208,7 +2270,9 @@
                 ]
             },
             "delete": {
-                "tags": ["Faqs"],
+                "tags": [
+                    "Faqs"
+                ],
                 "summary": "Delete existing Faq",
                 "description": "Deletes a record and returns no content",
                 "operationId": "deleteFaq",
@@ -2304,7 +2368,9 @@
         },
         "/notifications/both": {
             "get": {
-                "tags": ["Notifications"],
+                "tags": [
+                    "Notifications"
+                ],
                 "summary": "Send Both Notifications",
                 "description": "Send Both Notifications",
                 "operationId": "sendNotificationsBoth",
@@ -2360,7 +2426,9 @@
         },
         "/notifications/database": {
             "get": {
-                "tags": ["Notifications"],
+                "tags": [
+                    "Notifications"
+                ],
                 "summary": "Send Database Notification",
                 "description": "Send Database Notification",
                 "operationId": "sendDatabaseNotification",
@@ -2416,7 +2484,9 @@
         },
         "/notifications/email": {
             "get": {
-                "tags": ["Notifications"],
+                "tags": [
+                    "Notifications"
+                ],
                 "summary": "Send Email Notification",
                 "description": "Send Email Notification",
                 "operationId": "sendEmailNotification",
@@ -2472,7 +2542,9 @@
         },
         "/notifications/push": {
             "get": {
-                "tags": ["Notifications"],
+                "tags": [
+                    "Notifications"
+                ],
                 "summary": "Send Push Notification",
                 "description": "Send Push Notification",
                 "operationId": "sendPushNotification",
@@ -2528,7 +2600,9 @@
         },
         "/permissions": {
             "get": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Get list of Permission All",
                 "description": "Returns list of Permission All",
                 "operationId": "getPermissionListAll",
@@ -2598,7 +2672,9 @@
                 ]
             },
             "post": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Store New Permission",
                 "operationId": "storePermission",
                 "requestBody": {
@@ -2609,7 +2685,9 @@
                             "schema": {
                                 "title": "Store new permission request",
                                 "description": "permission request body",
-                                "required": ["name"],
+                                "required": [
+                                    "name"
+                                ],
                                 "properties": {
                                     "display_title": {
                                         "description": "Display Title",
@@ -2735,7 +2813,9 @@
         },
         "/permissions/{id}": {
             "get": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Return specific Permission",
                 "operationId": "getPermissionById",
                 "parameters": [
@@ -2828,7 +2908,9 @@
                 ]
             },
             "put": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Update existing Permission",
                 "operationId": "updatePermission",
                 "parameters": [
@@ -2851,7 +2933,9 @@
                             "schema": {
                                 "title": "Store new permission request",
                                 "description": "permission request body",
-                                "required": ["name"],
+                                "required": [
+                                    "name"
+                                ],
                                 "properties": {
                                     "display_title": {
                                         "description": "Display Title",
@@ -2975,7 +3059,9 @@
                 ]
             },
             "delete": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Delete existing Permission",
                 "description": "Deletes a record and returns content",
                 "operationId": "deletePermission",
@@ -3071,7 +3157,9 @@
         },
         "/roles": {
             "get": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Get list of Role All",
                 "description": "Returns list of Role All",
                 "operationId": "getRoleListAll",
@@ -3141,7 +3229,9 @@
                 ]
             },
             "post": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Store New Role",
                 "operationId": "storeRole",
                 "requestBody": {
@@ -3255,7 +3345,9 @@
         },
         "/roles/{id}": {
             "get": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Return specific Role",
                 "operationId": "getRoleById",
                 "parameters": [
@@ -3348,7 +3440,9 @@
                 ]
             },
             "put": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Update existing Role",
                 "operationId": "updateRole",
                 "parameters": [
@@ -3492,7 +3586,9 @@
                 ]
             },
             "delete": {
-                "tags": ["PermissionsAndRoles"],
+                "tags": [
+                    "PermissionsAndRoles"
+                ],
                 "summary": "Delete existing Role",
                 "description": "Deletes a record and returns content",
                 "operationId": "deleteRole",
@@ -3588,7 +3684,9 @@
         },
         "/change-password": {
             "post": {
-                "tags": ["Profile"],
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "Change Password",
                 "operationId": "changePassword",
                 "requestBody": {
@@ -3668,7 +3766,9 @@
         },
         "/update-profile": {
             "post": {
-                "tags": ["Profile"],
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "Update Profile",
                 "operationId": "updateProfile",
                 "requestBody": {
@@ -3676,7 +3776,11 @@
                     "content": {
                         "multipart/form-data": {
                             "schema": {
-                                "required": ["name", "email", "contact_no"],
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "contact_no"
+                                ],
                                 "properties": {
                                     "photo": {
                                         "description": "Uplaod a image",
@@ -3816,7 +3920,9 @@
         },
         "/samples": {
             "get": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Get list of Samples All",
                 "description": "Returns list of Samples All",
                 "operationId": "getSampleListAll",
@@ -3896,7 +4002,9 @@
                 ]
             },
             "post": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Store New Sample",
                 "operationId": "storeSample",
                 "requestBody": {
@@ -4002,7 +4110,9 @@
         },
         "/samples/list": {
             "get": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Get list of Samples",
                 "description": "Returns list of Samples",
                 "operationId": "getSampleList",
@@ -4074,7 +4184,9 @@
         },
         "/samples/{id}": {
             "get": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Return specific Sample",
                 "operationId": "getSampleById",
                 "parameters": [
@@ -4167,7 +4279,9 @@
                 ]
             },
             "put": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Update existing Sample",
                 "operationId": "updateSample",
                 "parameters": [
@@ -4283,7 +4397,9 @@
                 ]
             },
             "delete": {
-                "tags": ["Samples"],
+                "tags": [
+                    "Samples"
+                ],
                 "summary": "Delete existing Sample",
                 "description": "Deletes a record and returns no content",
                 "operationId": "deleteSample",
@@ -4379,7 +4495,9 @@
         },
         "/users": {
             "get": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Get list of User All",
                 "description": "Returns list of User All",
                 "operationId": "getUserListAll",
@@ -4449,7 +4567,9 @@
                 ]
             },
             "post": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Store New User",
                 "operationId": "storeUser",
                 "requestBody": {
@@ -4606,7 +4726,9 @@
         },
         "/users/list": {
             "get": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Get list of User",
                 "description": "Returns list of User",
                 "operationId": "getUserList",
@@ -4678,7 +4800,9 @@
         },
         "/users/{id}": {
             "get": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Return specific User",
                 "operationId": "getUserById",
                 "parameters": [
@@ -4771,7 +4895,9 @@
                 ]
             },
             "put": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Update existing User",
                 "operationId": "updateUser",
                 "parameters": [
@@ -4958,7 +5084,9 @@
                 ]
             },
             "delete": {
-                "tags": ["Users"],
+                "tags": [
+                    "Users"
+                ],
                 "summary": "Delete existing User",
                 "description": "Deletes a record and returns content",
                 "operationId": "deleteUser",
@@ -5179,7 +5307,10 @@
             "StoreSampleRequest": {
                 "title": "Create new sample request",
                 "description": "sample request body",
-                "required": ["name", "detail"],
+                "required": [
+                    "name",
+                    "detail"
+                ],
                 "properties": {
                     "name": {
                         "description": "Name of User",
@@ -5254,5 +5385,7 @@
             "description": "API Endpoints of Projects"
         }
     ],
-    "security": [[]]
+    "security": [
+        []
+    ]
 }
