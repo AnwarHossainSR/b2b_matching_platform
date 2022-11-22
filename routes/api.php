@@ -18,7 +18,6 @@ use App\Http\Controllers\Api\Users\UserController;
 use App\Http\Middleware\AuthGates;
 use Illuminate\Support\Facades\Route;
 
-
 Route::prefix('v1')->group(function () {
     Route::post('register', [RegisterController::class, 'register']);
     Route::post('forgot-password', [ForgotPasswordController::class, 'forgotPassword'])->name('password.forgot');
