@@ -37,5 +37,5 @@ return [
         'deleteFailed' => 'Something wrong! Delete failed.',
         'notSelfdelete' => 'Sorry! you cannot delete yourself.',
     ]
-    
+
 ];

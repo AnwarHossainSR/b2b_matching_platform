@@ -33,7 +33,7 @@ class LoginService
 
     public function login($request)
     {
-        if($this->loginRepository->login($request)) {
+        if ($this->loginRepository->login($request)) {
             $user = Auth::user();
             $result = [
                 'token_type' => CmnEnum::TOKEN_TYPE,
@@ -52,5 +52,4 @@ class LoginService
         //auth()->logout();
         return $this->success(__('messages.loggedOut'));
     }
-
 }
