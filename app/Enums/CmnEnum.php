@@ -8,7 +8,7 @@ abstract class CmnEnum
     public const INACTIVE = 0;
     public const ZERO = 0;
     public const ONE = 1;
-    public const DEFAULT_LANG = 'en';
+    public const DEFAULT_LANG = 'ja';
     public const API_SELECTED_AUTH = 'Sanctum';
     public const PASSWORD_MIN_LENGTH = 8;
     public const TOKEN_TYPE = 'Bearer';
