@@ -17,13 +17,13 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             ['title' => 'admin', 'display_title' => 'Admin'],
-            ['title' => 'user', 'display_title' => 'User']
+            ['title' => 'vendor', 'display_title' => 'Vendor'],
+            ['title' => 'distributor', 'display_title' => 'Distributor']
         ];
 
         foreach ($roles as $roleKey => $roleRow) {
             $role = Role::create($roleRow);
             $role->permissions()->attach(CmnEnum::PERMISSIONS[$roleKey]);
         }
-
     }
 }

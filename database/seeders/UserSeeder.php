@@ -23,8 +23,13 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('Bjit12345'),
             ],
             [
-                'name' => 'User',
-                'email' => 'user@bjitgroup.com',
+                'name' => 'Vendor',
+                'email' => 'vndor@bjitgroup.com',
+                'password' => Hash::make('Bjit12345'),
+            ],
+            [
+                'name' => 'Distributor',
+                'email' => 'distributor@bjitgroup.com',
                 'password' => Hash::make('Bjit12345'),
             ]
         ];
