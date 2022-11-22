@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\PermissionsAndRoles\RoleController;
 use App\Http\Controllers\Api\Profile\ChangePasswordController;
 use App\Http\Controllers\Api\Profile\ProfileController;
 use App\Http\Controllers\Api\Samples\SampleController;
+use App\Http\Controllers\Api\Skills\SkillController;
 use App\Http\Controllers\Api\Users\UserController;
 use App\Http\Middleware\AuthGates;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::prefix('v1')->group(function () {
     Route::post('login', [LoginController::class, 'login']);
     Route::get('/notifications/email', [EmailNotificationController::class, 'notify']);
     Route::get('/faqs', [FaqController::class, 'index']);
+    Route::get('/skills', [SkillController::class, 'index']);
     Route::middleware(['auth:sanctum', AuthGates::class])->group(function () {
         Route::post('update-profile', [ProfileController::class, 'update']);
         Route::post('change-password', [ChangePasswordController::class, 'update']);
@@ -44,6 +46,7 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('users', UserController::class);
         Route::apiResource('categories', CategoryController::class)->except(['index']);
         Route::apiResource('posts', PostController::class);
+        Route::apiResource('skills', SkillController::class)->except(['index']);
         // end resource based routes
     });
 });
