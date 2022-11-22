@@ -37,5 +37,5 @@ return [
         'deleteFailed' => '何か問題でも！ 削除に失敗しました。',
         'notSelfdelete' => 'ごめん！ 自分を削除することはできません。',
     ]
-
+    
 ];
