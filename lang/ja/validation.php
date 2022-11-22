@@ -23,7 +23,7 @@ return [
     'alpha_num' => 'の :attribute may only contain letters and numbers。',
     'array' => 'の :attribute must be an array。',
     'before' => 'の :attribute must be a date before :date。',
-    'before_or_equal' => 'の :attribute must be a date before or equal to :date。',
+    'before_or_equal' => 'の :attribute must be a date before or equal to :date。', 
     'between' => [
         'numeric' => 'の :attribute 間にある必要があります :min そして :max。',
         'file' => 'の :attribute must be between :min and :max kilobytes。',
@@ -123,8 +123,8 @@ return [
     'unique' => 'の :attribute すでに使用されている。',
     'uploaded' => 'の :attribute failed to upload。',
     'url' => 'の :attribute format is invalid。',
-    'uuid' => 'の :attribute must be a valid UUID。',
-
+    'uuid' => 'の :attribute must be a valid UUID。', 
+    
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
